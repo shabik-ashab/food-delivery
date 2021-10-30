@@ -12,6 +12,8 @@ import AddService from './Components/AddService';
 import Login from "./Components/Login";
 import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from './Components/PrivateRoute';
+import Orders from "./Components/Orders";
+import Checkout from './Components/Checkout';
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
       </PrivateRoute>
       <Route exact path="/login">
         <Login />
+      </Route>
+      <PrivateRoute exact path="/orders">
+        <Orders />
+      </PrivateRoute>
+      <Route exact path="/checkOut">
+        <Checkout />
       </Route>
      </Switch>
      </Router>

@@ -16,24 +16,27 @@ const Services = () => {
                 setProducts(data);   
             });
     }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/order`)
+            .then(res => res.json())
+            .then(data => {
+                setCart(data);   
+            });
+    }, []);
     
 
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
         setCart(newCart);
-        console.log(product);
-        // const newpd = {
-        //     name: {product?.name},
-        //     type: {product?.type},
-        //     price: {produt?.price},
-        //     img: {product?.img},
-        //     id: {product?.id}
-        // }
+        
         delete product._id;
         axios.post('http://localhost:5000/orders',product)
         .then( res => {
             console.log(res);
         })
+
+        
     }
     // console.log(cart);
     
@@ -47,7 +50,7 @@ const Services = () => {
             <div className="container my-container w-75">
                 <div>
                     <Link to="/addService">
-                      <button className="btn-lg mb-3">Add more service</button>  
+                      <button className="btn btn-light ms-2 mb-3">Add more service</button>  
                     </Link>
                 </div>
               <div className="row row-cols-1 row-cols-md-2 g-4 mb-5">
@@ -69,7 +72,6 @@ const Services = () => {
             </div>
             <div className="w-25 ms-2 mt-5">
                <Cart cart={cart}
-               setCart={setCart}
                
                >
 

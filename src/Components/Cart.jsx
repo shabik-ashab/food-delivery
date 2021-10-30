@@ -1,25 +1,16 @@
-import React, {useEffect,useState} from 'react';
-import axios  from 'axios';
+import React from 'react';
+
 
 const Cart = (props) => {
-    const [order, setOrder] = useState([]);
+    
 
-    const { cart,setCart } = props;
+    const { cart } = props;
     const pdList = props.cart;
-    // console.log(pdList);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/order`)
-            .then(res => res.json())
-            .then(data => {
-                setOrder(data);   
-            });
-    }, []);
-    // console.log(order)
+    
 
     let totalQuantity = 0;
     let total = 0;
-    for (const product of order) {
+    for (const product of cart) {
         if (!product.quantity) {
             product.quantity = 1;
         }
@@ -37,7 +28,7 @@ const Cart = (props) => {
             <p>Total: {total.toFixed(2)}</p>
             <div>
                 {
-                    order.map(product => 
+                    pdList.map(product => 
                         <div className="added-pd mt-2 d-flex">
                         <img src={product.img} className=" p-1 me-3" alt="..."/>
                          <p>name:{product.name}</p>

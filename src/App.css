@@ -26,9 +26,9 @@
   background-color: #f5e7c1;
   min-height: 100vh;
 }
-.my-card{
+/* .my-card{
   border-radius: 50px;
-}
+} */
 .my-container{
   width: 50%;
 }
@@ -39,6 +39,32 @@
   width: 40vh;
   border: 1px solid black;
 }
+.added-mypd{
+  width: 70vh;
+  border: 1px solid black;
+}
+.added-mypd img{
+  width:100px;
+}
 .added-pd img{
   width:60px;
+}
+/* input#name {
+  background-color: #e84442;
+}
+input#email {
+  background-color: #e84442;
+  
+} */
+.input-form{
+  width: 60vh;
+  
+}
+
+.input-form input{
+  background-color: #e84442;
+  outline: none;
+    border: none;
+    font-size: 1.5rem;
+    border-bottom: 1px solid aqua;
 }

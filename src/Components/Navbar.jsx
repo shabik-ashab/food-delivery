@@ -23,7 +23,7 @@ const Navbar = () => {
             <NavLink to="/services">Service</NavLink>
             {/* <NavLink to="/blogs">blogs</NavLink>            */}
             <NavLink to="/contact">Contact</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/orders">My Order</NavLink>
             </div>
             <img src={img} className="nav-img ms-5" />
             </nav>
